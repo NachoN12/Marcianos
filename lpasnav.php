@@ -28,14 +28,12 @@ tr:nth-child(even) {
   <tr>
       <th>Id</th>
       <th>Nombre</th>
-      <th>Modificar</th>
-      <th>Eliminar</th>
+      <th>Bajar Pasajero</th>
   </tr>
         <tbody>
         	<?php
             $nave = $_POST['aeronave'];
-            echo $nave;
-            $results = "SELECT id, nombre FROM pasajero WHERE nave = '.$nave.'";
+            $results = "SELECT id, nombre FROM pasajero WHERE nave = $nave";
             $result = $link->query($results);
             while($row = $result->fetch_assoc()) {
             ?>
@@ -43,7 +41,7 @@ tr:nth-child(even) {
                 <td><?php echo $row['id']?></td>
                 <td><?php echo $row['nombre']?></td>
                 <td> 
-                	<form method="POST" action="proc_enod.php">
+                	<form method="POST" action="bpas.php">
 						<input type="hidden" name="id" value="<?php echo $row['id']; ?>">
     					<input class="btn btn-danger" type="submit" value="Bajar Pasajero">
     				</form>	
