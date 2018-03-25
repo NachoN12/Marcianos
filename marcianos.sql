@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 23, 2018 at 11:39 PM
+-- Generation Time: Mar 25, 2018 at 04:20 PM
 -- Server version: 5.7.21-0ubuntu0.16.04.1
 -- PHP Version: 7.0.28-0ubuntu0.16.04.1
 
@@ -31,17 +31,20 @@ CREATE TABLE `aeronave` (
   `nombre` text NOT NULL,
   `capacidad` int(11) NOT NULL,
   `origen` int(11) DEFAULT '0',
-  `destino` int(11) DEFAULT '0'
+  `destino` int(11) DEFAULT '0',
+  `abordo` int(11) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `aeronave`
 --
 
-INSERT INTO `aeronave` (`id`, `nombre`, `capacidad`, `origen`, `destino`) VALUES
-(1, 'Meteoro', 20, 1, 1),
-(2, 'Halcon Milenario', 5, 0, 0),
-(3, 'King of Space', 100, 0, 0);
+INSERT INTO `aeronave` (`id`, `nombre`, `capacidad`, `origen`, `destino`, `abordo`) VALUES
+(1, 'Meteoro', 20, 5, 4, 0),
+(2, 'Halcon Milenario', 5, 4, 5, 5),
+(3, 'King of speiss', 101, 0, 0, 0),
+(5, 'Space Jam', 11, 0, 0, 0),
+(6, 'Supersonicos', 5, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -78,7 +81,7 @@ CREATE TABLE `nodriza` (
 --
 
 INSERT INTO `nodriza` (`id`, `nombre`) VALUES
-(4, 'Ã‘uÃ±orkdriza'),
+(4, 'Ã‘uÃ±ordriza'),
 (5, 'Estrella de La Muerte');
 
 -- --------------------------------------------------------
@@ -98,8 +101,13 @@ CREATE TABLE `pasajero` (
 --
 
 INSERT INTO `pasajero` (`id`, `nombre`, `nave`) VALUES
-(1, 'Marvin', 0),
-(2, 'Zim', 0);
+(1, 'Marvin', 2),
+(2, 'Zim', 0),
+(4, 'Josesiwix', 0),
+(5, 'Han Solo', 2),
+(6, 'C3PO', 2),
+(7, 'R2D2', 2),
+(8, 'Chewbacca', 2);
 
 -- --------------------------------------------------------
 
@@ -119,7 +127,8 @@ CREATE TABLE `revision` (
 --
 
 INSERT INTO `revision` (`id`, `fecha`, `revisor`, `nave`) VALUES
-(1, '2018-03-23', '1', 1);
+(1, '2018-03-23', '1', 1),
+(2, '2018-03-24', '1', 2);
 
 --
 -- Indexes for dumped tables
@@ -164,7 +173,7 @@ ALTER TABLE `revision`
 -- AUTO_INCREMENT for table `aeronave`
 --
 ALTER TABLE `aeronave`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `fiscalizador`
 --
@@ -174,17 +183,17 @@ ALTER TABLE `fiscalizador`
 -- AUTO_INCREMENT for table `nodriza`
 --
 ALTER TABLE `nodriza`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `pasajero`
 --
 ALTER TABLE `pasajero`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `revision`
 --
 ALTER TABLE `revision`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

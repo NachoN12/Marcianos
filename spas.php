@@ -9,7 +9,7 @@
 		<label> Naves Disponibles </label> <br>
 		<select name="aeronave">
 			<?php 
-				$sql = mysqli_query($link, "SELECT id, nombre FROM aeronave WHERE aeronave.capacidad >(SELECT COUNT(*) FROM pasajero, aeronave WHERE nave = aeronave.id) ");
+				$sql = mysqli_query($link, "SELECT id, nombre FROM aeronave WHERE aeronave.capacidad > aeronave.abordo");
 				while ($row = $sql->fetch_assoc()){
 				echo "<option value='".$row['id']."'>" . $row['nombre'] . "</option>";
 				}

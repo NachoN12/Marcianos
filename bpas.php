@@ -4,8 +4,9 @@
   include('conexion.php');
   $id = $_POST['id'];
  $delete = "UPDATE pasajero SET nave = '0' WHERE id = $id ";
+ $abordo = "UPDATE aeronave SET abordo = abordo - 1 WHERE id = $idNave";
 
- if(mysqli_query($link, $delete) == TRUE){
+ if(mysqli_query($link, $delete) == TRUE && mysqli_query($link, $abordo) == TRUE){
 	?>
 
 	<div class="alert alert-success">
